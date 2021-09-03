@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/30 16:50:02 by zminhas           #+#    #+#              #
-#    Updated: 2021/08/30 17:45:13 by zminhas          ###   ########.fr        #
+#    Updated: 2021/09/03 17:01:01 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,12 +39,10 @@ LIB_PATH	=	./libft
 		@gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
 		@echo "${LIGHTPURPLE}Compilation of :$<${RESET}"
 
-$(NAME):	${OBJS_SERVER}
+all:	${OBJS_SERVER}
 		@make -C ${LIB_PATH}
 		@gcc -Wall -Wextra -Werror main_server.c $(LIB_PATH)/libft.a -o $(EXEC_1)
 		@echo "${GREEN}server created !${RESET}"
-	
-all:	${NAME}
 
 server:	${OBJS_SERVER}
 		@make -C ${LIB_PATH}
@@ -55,6 +53,8 @@ client:	${OBJS}
 		@make -C ${LIB_PATH}
 		@gcc -Wall -Wextra -Werror main_client.c $(LIB_PATH)/libft.a -o $(EXEC_2)
 		@echo "${GREEN}client created !${RESET}"
+
+sc:		server client
 
 clean:
 		@rm -f ${OBJS_SERVER}

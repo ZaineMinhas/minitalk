@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 18:35:49 by zminhas           #+#    #+#              #
-#    Updated: 2021/08/30 18:50:01 by zminhas          ###   ########.fr        #
+#    Updated: 2021/09/03 16:58:43 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
 SRCS	=	ft_atoi.c\
+			ft_pow.c\
 			ft_putchar.c\
 			ft_putnbr.c\
 			ft_putstr.c\
@@ -36,7 +37,7 @@ NAME	=	libft.a
 $(NAME):	${OBJS}
 			@ar -rcs ${NAME} ${OBJS}
 			@ranlib ${NAME}
-			@echo "${GREEN}Library created !${RESET}"
+			@echo "${GREEN}libft.a created !${RESET}"
 
 all:		${NAME}
 
