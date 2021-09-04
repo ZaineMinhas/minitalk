@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/30 16:50:02 by zminhas           #+#    #+#              #
-#    Updated: 2021/09/03 17:01:01 by zminhas          ###   ########.fr        #
+#    Updated: 2021/09/04 15:38:33 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ LIB_PATH	=	./libft
 
 .c.o:
 		@gcc -Wall -Wextra -Werror -c -I./ $< -o ${<:.c=.o}
-		@echo "${LIGHTPURPLE}Compilation of :$<${RESET}"
 
 all:	${OBJS_SERVER}
 		@make -C ${LIB_PATH}

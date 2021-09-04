@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/18 14:53:21 by zminhas           #+#    #+#             */
-/*   Updated: 2021/09/03 16:46:46 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/09/04 15:31:45 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 
 int		ft_atoi(const char *str);
-int		ft_pow(int pow, int nb);
+int		ft_pow(int nb, int pow);
 void	ft_putchar(char c);
 void	ft_putnbr(int n);
 void	ft_putstr(char *s);

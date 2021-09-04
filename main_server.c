@@ -6,31 +6,30 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:36:29 by zminhas           #+#    #+#             */
-/*   Updated: 2021/09/03 18:01:40 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/09/04 16:27:04 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
-#include <stdio.h>
 
 t_sigchar	*g_char;
 
-void	init(void)
+static void	init(void)
 {
 	g_char->c = 0;
 	g_char->bit = 0;
 }
 
-void	print_pid(void)
+static void	print_pid(void)
 {
 	ft_putnbr(getpid());
 	ft_putchar('\n');
 }
 
-void	intercom(int sig)
+static void	intercom(int sig)
 {
 	if (sig == SIGUSR1)
-		g_char->c += ft_pow(g_char->bit, 2);
+		g_char->c += ft_pow(2, g_char->bit);
 	g_char->bit++;
 	if (g_char->bit == 7)
 	{

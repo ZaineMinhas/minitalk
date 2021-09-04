@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 16:37:35 by zminhas           #+#    #+#             */
-/*   Updated: 2021/09/03 17:59:51 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/09/04 16:27:14 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 
 typedef struct s_sigchar
 {
-	int	c;
-	int	bit;
+	char	c;
+	int		bit;
 }				t_sigchar;
 
 #endif
