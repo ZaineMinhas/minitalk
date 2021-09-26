@@ -6,7 +6,7 @@
 #    By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/30 16:50:02 by zminhas           #+#    #+#              #
-#    Updated: 2021/09/04 15:38:33 by zminhas          ###   ########.fr        #
+#    Updated: 2021/09/26 18:20:18 by zminhas          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,9 @@ BLUE		= $(shell tput -Txterm setaf 6)
 WHITE		= $(shell tput -Txterm setaf 7)
 RESET		= $(shell tput -Txterm sgr0)
 
-SRCS_SERVER	=	main_server.c\
+SRCS_SERVER	=	main_server.c
 
-SRCS_CLIENT	=	\
+SRCS_CLIENT	=	main_client.c
 
 
 OBJS_SERVER	=	${SRCS_SERVER:.c=.o}
