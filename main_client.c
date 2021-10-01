@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:37:23 by zminhas           #+#    #+#             */
-/*   Updated: 2021/10/01 16:41:52 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/10/01 19:20:19 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	share_signal(char c, int pid)
 		else
 			send(pid, SIGUSR2);
 		c /= 2;
-		usleep(300);
+		usleep(200);
 	}
 }
 
