@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:37:23 by zminhas           #+#    #+#             */
-/*   Updated: 2021/10/01 19:20:19 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/10/04 16:06:15 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 
 	check_error(argc, argv);
 	i = -1;
-	ft_putstr("send bytes : [");
+	ft_putstr("sent bytes : [");
 	ft_putnbr(ft_strlen(argv[2]));
 	ft_putstr("]\n");
 	j = 0;
@@ -66,7 +66,7 @@ int	main(int argc, char **argv)
 	{
 		share_signal(argv[2][i], ft_atoi(argv[1]));
 		j++;
-		ft_putstr("\rrecive bytes : [");
+		ft_putstr("\rreceived bytes : [");
 		ft_putnbr(j);
 		ft_putstr("]");
 	}
