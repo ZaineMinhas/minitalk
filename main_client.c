@@ -6,11 +6,12 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:37:23 by zminhas           #+#    #+#             */
-/*   Updated: 2021/10/04 16:06:15 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/10/05 19:45:06 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minitalk.h"
+#include <stdio.h>
 
 static void	check_error(int argc, char **argv)
 {
@@ -35,20 +36,43 @@ static void	send(int pid, int signal)
 	}
 }
 
-static void	share_signal(char c, int pid)
+static void	share_len(int len, int pid)
 {
 	int	i;
 
 	i = -1;
-	while (++i < 7)
+	while (++i < 32)
 	{
-		if (c % 2)
+		if (len % 2)
 			send(pid, SIGUSR1);
 		else
 			send(pid, SIGUSR2);
-		c /= 2;
-		usleep(200);
+		len /= 2;
+		usleep(250);
 	}
+}
+
+static void	share_char(char c, int pid)
+{
+	int	i;
+
+	i = -1;
+	while (++i < 8)
+	{
+		if (c % 2)
+		{
+			printf("1");
+			send(pid, SIGUSR1);
+		}
+		else
+		{
+			printf("0");
+			send(pid, SIGUSR2);
+		}
+		c /= 2;
+		usleep(250);
+	}
+	printf("\n");
 }
 
 int	main(int argc, char **argv)
@@ -57,17 +81,15 @@ int	main(int argc, char **argv)
 	int	j;
 
 	check_error(argc, argv);
+	share_len(ft_strlen(argv[2]), ft_atoi(argv[1]));
 	i = -1;
-	ft_putstr("sent bytes : [");
-	ft_putnbr(ft_strlen(argv[2]));
-	ft_putstr("]\n");
 	j = 0;
 	while (argv[2][++i])
 	{
-		share_signal(argv[2][i], ft_atoi(argv[1]));
+		share_char(argv[2][i], ft_atoi(argv[1]));
 		j++;
-		ft_putstr("\rreceived bytes : [");
-		ft_putnbr(j);
-		ft_putstr("]");
+		// ft_putstr("\rbytes received : [");
+		// ft_putnbr(i / j * 100);
+		// ft_putstr("%]");
 	}
 }
