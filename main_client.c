@@ -6,7 +6,7 @@
 /*   By: zminhas <zminhas@student.s19.be>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:37:23 by zminhas           #+#    #+#             */
-/*   Updated: 2021/10/06 19:06:05 by zminhas          ###   ########.fr       */
+/*   Updated: 2021/10/08 15:12:39 by zminhas          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 static void	check_error(int argc, char **argv)
 {
 	if (argc != 3)
+	{
 		ft_putstr("Only two parameters required\n");
+		exit(1);
+	}
 	if (ft_atoi(argv[1]) <= 0)
+	{
 		ft_putstr("The pid must be greater than 0\n");
-	exit(1);
+		exit(1);
+	}
 }
 
 static void	send(int pid, int signal)
@@ -69,7 +74,6 @@ int	main(int argc, char **argv)
 	check_error(argc, argv);
 	share_len(ft_strlen(argv[2]), ft_atoi(argv[1]), 50);
 	i = -1;
-	ft_putnbr(ft_strlen(argv[2]));
 	while (argv[2][++i])
 		share_char(argv[2][i], ft_atoi(argv[1]), 50);
 	return (0);
